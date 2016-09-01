@@ -3,6 +3,7 @@ let router = express.Router();
 let mongoose = require('mongoose');
 let Bug = require('../model/bugModel')
 
+
 router.post('/bugRoute', function(req, res, next) {
   let newBug = new Bug(
     {
@@ -18,4 +19,12 @@ router.post('/bugRoute', function(req, res, next) {
        res.send("This bug has been added");
   });
 });
+
+
+router.get('/bugs', (req, res, next) => {
+  Bug.find().then((bug) => {
+    res.send(bug);
+  })
+});
+
 export = router;
