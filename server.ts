@@ -1,5 +1,6 @@
 require('dotenv').config({ silent: true });
 import express = require('express');
+import mongoose = require('mongoose');
 import favicon = require('serve-favicon');
 import logger = require('morgan');
 import cookieParser = require('cookie-parser');
@@ -18,8 +19,21 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
+//database connection
+mongoose.connect('mongodb://localhost/dbBug');
+
+let db = mongoose.connection;
+
+db.on('error', console.error.bind('connection error'));
+db.once('open', () => {
+  console.log('MONGO YAYYY');
+})
+
+app.use('/api/bugs', require('./route/bugRoute'));
+
 app.use(express.static('./ngApp'));
-app.use('/scripts', express.static('bower_components'));
+// app.use('/scripts', express.static('bower_components'));
+
 
 app.get('/*', function(req, res, next) {
   if (/.js|.html|.css|templates|js|scripts/.test(req.path) || req.xhr) {
