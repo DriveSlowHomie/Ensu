@@ -29,7 +29,7 @@ db.once('open', () => {
   console.log('MONGO YAYYY');
 })
 
-app.use('/api/bugs', require('./route/bugRoute'));
+app.use('/api', require('./route/bugRoute'));
 
 app.use(express.static('./ngApp'));
 // app.use('/scripts', express.static('bower_components'));

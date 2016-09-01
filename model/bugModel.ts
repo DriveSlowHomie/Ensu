@@ -8,7 +8,6 @@ let BugSchema:any = new mongoose.Schema (
     description: String,
     discoveredBy: String,
     assignedTo: Number,
-    latitude: Number,
     date_created: Date,
     resolved: {
       type: Date,
