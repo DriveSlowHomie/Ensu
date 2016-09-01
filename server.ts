@@ -32,7 +32,7 @@ db.once('open', () => {
 app.use('/api', require('./route/bugRoute'));
 
 app.use(express.static('./ngApp'));
-// app.use('/scripts', express.static('bower_components'));
+app.use('/scripts', express.static('bower_components'));
 
 
 app.get('/*', function(req, res, next) {
