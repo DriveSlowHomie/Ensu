@@ -12,7 +12,7 @@ namespace app {
       controller: app.Controllers.HomeController,
       controllerAs: 'vm'
     });
-    
+
     $urlRouterProvider.otherwise('/');
     $locationProvider.html5Mode(true);
   });
