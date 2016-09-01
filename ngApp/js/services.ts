@@ -13,15 +13,14 @@ namespace app.Services {
       return this.BugResource.query()
     }
 
-<<<<<<< 25097a2e3b3b9d67c3d8c784c0963f2cf55b56ef
     public add(bug){
       console.log(`this is being called in the services ${bug.bugName}`)
       return this.BugResource.save(bug).$promise
-=======
+    }
+
     public remove(id){
       console.log(`this is id ${id}`)
       return this.BugResource.remove({id:id}).$promise;
->>>>>>> Delete function added
     }
 
   }
