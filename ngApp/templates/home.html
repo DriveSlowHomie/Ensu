@@ -14,7 +14,7 @@
 <form>
 <div class="input">
   <label>Bug Name</label>
-  <input ng-model="vm.bugName">
+  <input ng-model="vm.bugName"> {{vm.bugName}}
 </div>
 
 <div class="input">
@@ -32,5 +32,5 @@
   <input ng-model="vm.assignedTo">
 </div>
 
-  <button ng-click="vm.add()">Update Spot</button>
+  <button ng-click="vm.add()">Add Bug</button>
 </form>
