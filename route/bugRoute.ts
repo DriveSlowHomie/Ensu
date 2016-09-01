@@ -4,7 +4,7 @@ let mongoose = require('mongoose');
 let Bug = require('../model/bugModel')
 
 
-router.post('/bugRoute', function(req, res, next) {
+router.post('/bugs', function(req, res, next) {
   let newBug = new Bug(
     {
     bugName: req.body.bugName,
@@ -14,9 +14,10 @@ router.post('/bugRoute', function(req, res, next) {
     date_created: new Date()
   }
 );
+console.log(newBug)
   newBug.save(function(err, bug) {
-       if(err) return next(err);
-       res.send("This bug has been added");
+       if(err) {console.log(err)}
+       else {res.json("This bug has been added")};
   });
 });
 

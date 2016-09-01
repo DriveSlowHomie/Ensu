@@ -7,7 +7,7 @@ let BugSchema:any = new mongoose.Schema (
     bugName: String,
     description: String,
     discoveredBy: String,
-    assignedTo: Number,
+    assignedTo: String,
     date_created: Date,
     resolved: {
       type: Date,

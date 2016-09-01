@@ -6,3 +6,31 @@
     <button type="button" class="btn btn-primary">Resolved</button>
   </li>
 </ul>
+
+
+
+<h1>Add a New Bug</h1>
+
+<form>
+<div class="input">
+  <label>Bug Name</label>
+  <input ng-model="vm.bugName"> {{vm.bugName}}
+</div>
+
+<div class="input">
+  <label>Description</label>
+  <input ng-model="vm.description">
+</div>
+
+<div class="input">
+  <label>Discovered By</label>
+  <input ng-model="vm.discoveredBy">
+</div>
+
+<div class="input">
+  <label>Assigned To</label>
+  <input ng-model="vm.assignedTo">
+</div>
+
+  <button ng-click="vm.add()">Add Bug</button>
+</form>
