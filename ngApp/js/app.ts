@@ -11,6 +11,11 @@ namespace app {
       templateUrl: '/templates/home.html',
       controller: app.Controllers.HomeController,
       controllerAs: 'vm'
+    }).state('Delete', {
+      url: '/delete/:id',
+      templateUrl: '/templates/delete.html',
+      controller: app.Controllers.HomeController,
+      controllerAs: 'vm'
     });
 
     $urlRouterProvider.otherwise('/');

@@ -23,14 +23,15 @@ console.log(newBug)
 
 
 router.get('/bugs', (req, res, next) => {
-  Bug.find().then((bug) => {
-    res.send(bug);
+  Bug.find({resolved: null}).then((bug)=>{
+    console.log("bug info", bug)
+    res.json(bug);
   })
 });
 
-router.delete('bugs/:id', (req, res, next) => {
+router.delete('/bugs/:id', (req, res, next) => {
   let id = req.params['id'];
-  Bug.findByIdAndUpdate(id, {$set: {date_deleted: new Date()}}, (err, res) => {
+  Bug.findByIdAndUpdate(id, {$set: {resolved: new Date()}}, (err, res) => {
     if(err) {
       console.log(err);
     } else {
