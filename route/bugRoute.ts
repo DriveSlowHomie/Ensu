@@ -28,4 +28,18 @@ router.get('/bugs', (req, res, next) => {
   })
 });
 
+router.delete('bugRoute/:id', (req, res, next) => {
+  let id = req.params['id'];
+  Bug.findByIdAndUpdate(id, {$set: {date_deleted: new Date()}}, (err, res) => {
+    if(err) {
+      console.log(err);
+    } else {
+      console.log(res);
+    }
+  })
+
+  res.sendStatus(200);
+});
+
+
 export = router;

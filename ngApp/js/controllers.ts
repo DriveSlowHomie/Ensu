@@ -1,6 +1,5 @@
 namespace app.Controllers {
   export class HomeController {
-
     public bugs
     public bug;
     public bugName;
